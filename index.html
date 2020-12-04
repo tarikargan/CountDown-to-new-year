@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./style.css">
+        
+</head>
+<body>
+    <article>
+        <section class="animat col" >
+            <div class="box">
+                <h1>CountDown to New Year</h1>
+            </div>
+        </section>
+        <section class="time col">
+            <span>
+                <div class="months"></div>
+                Month
+            </span>
+            <span>
+                <div class="days"></div>
+                Days
+            </span>
+            <span>
+                <div class="hours"></div>
+                Hours
+            </span>
+            <span>
+                <div class="minutes"></div>
+                Minutes
+            </span>
+            <span>
+                <div class="seconds"></div>
+                Seconds
+            </span>
+        </section>
+    </div>
+</article>
+    
+</body>
+<script src="./jquery-3.4.1.min.js"></script>
+<script src="index.js"></script>
+ <script >
+ var img = document.querySelector(".animat");
+function create(){ 
+        var color = Math.random() * 250;
+        var squart = document.createElement('span');
+        var size = Math.random() * 20;
+        squart.style.width = 20 + size +"px";
+        squart.style.height = 20 + size +"px";
+        squart.style.top = Math.random() * innerWidth + "px";
+        squart.style.left = Math.random() * innerHeight + "px";
+        squart.style.background = `radial-gradient(transparent,rgba(230,230,230,0.2),rgba(230,230,230,0.6))`;
+        squart.style.borderRadius = "50%";
+        img.appendChild(squart);
+        setTimeout(()=>{
+            squart.remove();
+        },5000);
+    }
+    setInterval(create,150);
+
+       var aven = new Date('jan 1, 2021 00:00:00');
+       var x = setInterval(()=>{
+            var tmp      = new Date();
+            var comp     = aven.getTime() - tmp.getTime();
+            var Month    = Math.floor(comp/(1000*60*60*24*30));                     //months
+            var day      = Math.floor(comp%(1000*60*60*24*30)/(1000*60*60*24));     //days
+            var hours    = Math.floor(comp%(1000*60*60*24)/(1000*60*60));           //hours
+            var minutes  = Math.floor(comp%(1000*60*60)/(1000*60));                 //minute
+            var seconds  = Math.floor(comp%(1000*60)/(1000));                       //second
+           
+            sel('.months').innerHTML = getTrueNumber(Month);
+            sel('.days').innerHTML = getTrueNumber(day);
+            sel('.hours').innerHTML = getTrueNumber(hours);
+            sel('.minutes').innerHTML = getTrueNumber(minutes);
+            sel('.seconds').innerHTML = getTrueNumber(seconds);
+          
+       },1000);
+
+    function sel(el){
+        return document.querySelector(el);
+    }
+
+    function getTrueNumber(n){
+       if(n <10){
+              return "0" + n;
+       }else{
+        return  n;
+       }
+    }
+ </script>
+</html>

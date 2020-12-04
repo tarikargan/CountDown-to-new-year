@@ -1,0 +1,118 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Aldrich&family=Anton&display=swap');
+/* font-family: 'Aldrich', sans-serif;
+font-family: 'Anton', sans-serif; */
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+body{
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: rgba(118, 39, 247,0.6);
+}
+article{
+    width: 80%;
+    flex-wrap: wrap;
+    /* background: rgba(32, 10, 10,0.8); */
+    display: flex;
+    background: rgb(16, 218, 245);
+    
+}
+article .col{
+    height: 350px;
+    flex:50%;
+   
+}
+article section:first-child{
+    /* background: linear-gradient(rgba(167, 167, 167, 0.8),rgba(167, 167, 167, 0.6)), url('./img/img0.jpg');  */
+    background: linear-gradient(rgba(1, 1, 1, 0.8),rgba(1, 1, 1, 0.6)), url('./img/img0.jpg');
+    background-size: cover;
+    position: relative;
+    overflow: hidden;
+    
+}
+article section:first-child .box{
+    width: 100%;
+    height: 100%;
+    top: 0px;
+    left: 0px;
+    position: relative;
+    -webkit-box-reflect:above 2px linear-gradient(to bottom,rgba(0,0,0,1),transparent);
+    line-height: 1px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 3;
+}
+article section:first-child h1{
+    
+    font-family: 'Anton', sans-serif;
+    font-size: 3.6vw;
+    -webkit-text-stroke: 0.1px #fff;
+    padding: 0px;
+    color:rgba(118, 39, 247,0.5);
+
+   }
+article section:last-child{
+    padding: 70px 10px;
+    background: linear-gradient(rgba(118, 39, 247,0.8),rgba(118, 39, 247,0.7)),url('./img/img1.jpg'); 
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+.time span{
+    width: 60px;
+    font-family: 'Anton', sans-serif;
+    margin: 0px 5px;
+    background: red;
+    color: white;
+    text-align: center;
+    font-weight: lighter;
+    font-size: 0.8em;
+}
+.time span div{
+    font-size: 40px;
+    text-align: center;
+    background:rgba(6, 2, 8, 0.9);
+   
+}
+.animat span{
+    position: absolute;
+    pointer-events: none;
+    animation: anim 4s infinite linear;
+}
+@keyframes anim{
+    20%{
+        transform: translate(-20px,0px) rotateZ(0deg);
+    }
+    40%{
+        transform: translate(50px,60px) rotateZ(25deg);
+    }
+     60%{
+        transform: translate(-20px,40px) rotateZ(-60deg);
+        opacity: 0.8;
+    }
+    80%{
+        transform: translate(30px,20px) rotateZ(75deg);
+        opacity: 0.6;
+    }
+   95%{
+        transform: translate(60px,20px) rotateZ(-25deg);
+        opacity: 0.2;
+    }
+}
+@media (max-width:990px){
+    article{
+        margin: 50px 0px;
+    }
+    article section:first-child{
+        flex: 100%;
+    }
+}
